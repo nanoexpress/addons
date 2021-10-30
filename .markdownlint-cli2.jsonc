@@ -4,5 +4,11 @@
     "MD013": false,
     "MD033": false
   },
-  "ignores": ["node_modules", "packages/**/node_modules", ".github/PULL_REQUEST_TEMPLATE.md", ".github/ISSUE_TEMPLATE/Feature_Request.md", ".github/ISSUE_TEMPLATE/Bug_Report.md"]
+  "ignores": [
+    "node_modules",
+    "packages/**/node_modules",
+    ".github/PULL_REQUEST_TEMPLATE.md",
+    ".github/ISSUE_TEMPLATE/Feature_Request.md",
+    ".github/ISSUE_TEMPLATE/Bug_Report.md"
+  ]
 }
