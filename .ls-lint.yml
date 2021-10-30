@@ -15,3 +15,5 @@ ignore:
   - .git
   - .bin
   - packages/swagger-parse/node_modules
+  - packages/swagger-parse/esm
+  - packages/swagger-parse/cjs
