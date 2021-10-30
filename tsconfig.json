@@ -1,0 +1,58 @@
+{
+  "include": ["packages"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "esnext",
+    "lib": ["es2020"],
+    "allowJs": false,
+    "incremental": false,
+    "checkJs": false,
+    // "jsx": "preserve",
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "typings",
+    // "outFile": "./",
+    "outDir": "cjs",
+    // "rootDir": ".",
+    "composite": false,
+    "removeComments": true,
+    "noEmit": true,
+    // "importHelpers": true,
+    // "downlevelIteration": true,
+    // "isolatedModules": true,
+
+    "strict": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    // "paths": {},
+    // "rootDirs": [],
+    "typeRoots": ["./node_modules/@types", "types"],
+    // "types": [],
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    // "preserveSymlinks": true,
+
+    // "sourceRoot": "./src",
+    // "mapRoot": "maps" ,
+    "sourceMap": true,
+    "inlineSourceMap": false
+    // "inlineSources": false
+
+    // "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true,
+  }
+}
