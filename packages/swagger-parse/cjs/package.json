@@ -1,0 +1,4 @@
+{
+  "type": "commonjs",
+  "main": "swagger-parse.cjs.js"
+}
