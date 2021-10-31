@@ -31,7 +31,13 @@ export default ['swagger-parse'].map((name) => ({
   plugins: [
     resolve(),
     typescript({
-      // eslint-disable-next-line @typescript-eslint/naming-convention
+      tsconfigOverride: {
+        include: [`packages/${name}/src`],
+        compilerOptions: {
+          rootDir: `packages/${name}/src`,
+          declarationDir: `packages/${name}/typings`
+        }
+      },
       rollupCommonJSResolveHack: false,
       clean: true,
       useTsconfigDeclarationDir: true
