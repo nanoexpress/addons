@@ -40,4 +40,4 @@ app.get(
 
 ## License
 
-MIT
+GPL-3.0 License
