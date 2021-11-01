@@ -1,14 +1,10 @@
 {
   "name": "@nanoexpress/addon-swagger-parse",
-  "private": true,
   "version": "1.0.3",
   "description": "TypeScript and Ajv generator add-on for nanoexpress",
   "type": "module",
   "main": "esm/swagger-parse.es.js",
   "typings": "typings/swagger-parse.d.ts",
-  "publishConfig": {
-    "access": "restricted"
-  },
   "funding": {
     "type": "patreon",
     "url": "https://www.patreon.com/dalisoft"
