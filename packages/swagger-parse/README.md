@@ -1,6 +1,6 @@
 # swagger-parse [Alpha]
 
-TypeScript and Ajv generator add-on for nanoexpres
+TypeScript and Ajv generator add-on for nanoexpres available only in **ESM** mode
 
 > **This add-on may not work as expected or not work at all**
 
