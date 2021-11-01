@@ -1,7 +1,7 @@
 {
   "name": "@nanoexpress/addon-swagger-parse",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "TypeScript and Ajv generator add-on for nanoexpress",
   "type": "module",
   "main": "esm/swagger-parse.es.js",
