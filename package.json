@@ -13,7 +13,7 @@
     "lint": "smartlint",
     "build": "rollup -c",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
-    "prepare": "husky install && yarn build",
+    "prepare": "husky install",
     "prepublishOnly": "yarn build"
   },
   "dependencies": {},

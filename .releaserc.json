@@ -102,14 +102,16 @@
     [
       "@semantic-release/npm",
       {
-        "npmPublish": true,
+        "npmPublish": false,
         "tarballDir": "dist"
       }
     ],
+    "@semantic-release/github",
     [
-      "@semantic-release/github",
+      "@semantic-release/git",
       {
-        "assets": "dist/*.tgz"
+        "assets": ["package.json", "esm", "cjs", "typings"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
       }
     ]
   ]
