@@ -42,4 +42,4 @@ app.get(
 
 ## License
 
-GPL-3.0 License
+GPL-3.0
