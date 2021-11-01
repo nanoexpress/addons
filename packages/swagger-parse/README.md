@@ -1,6 +1,8 @@
-# swagger-parse
+# swagger-parse [Alpha]
 
 TypeScript and Ajv generator add-on for nanoexpres
+
+> **This add-on may not work as expected or not work at all**
 
 ## Installation
 

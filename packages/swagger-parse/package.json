@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/nanoexpress/addons/issues"
   },
-  "homepage": "https://github.com/nanoexpress/addons#readme",
+  "homepage": "https://github.com/nanoexpress/addons/tree/master/packages/swagger-parse#readme",
   "dependencies": {
     "ajv": "^8.6.3",
     "ajv-formats": "^2.1.1",
