@@ -1,1 +1,1 @@
-{"version":3,"file":"ajv-to-tsd.d.ts","sourceRoot":"","sources":["../../src/transformers/ajv-to-tsd.ts"],"names":[],"mappings":"AAIA,OAAO,EAAE,YAAY,EAAE,MAAM,UAAU,CAAC;AAExC,wBAA8B,0BAA0B,CACtD,SAAS,EAAE,YAAY,GAAG,IAAI,GAC7B,OAAO,CAAC,IAAI,CAAC,CAwDf"}
+{"version":3,"file":"ajv-to-tsd.d.ts","sourceRoot":"","sources":["../../src/transformers/ajv-to-tsd.ts"],"names":[],"mappings":"AAUA,OAAO,EAAE,YAAY,EAAW,MAAM,UAAU,CAAC;AAEjD,wBAA8B,0BAA0B,CACtD,SAAS,EAAE,YAAY,GAAG,IAAI,GAC7B,OAAO,CAAC,IAAI,CAAC,CAkFf"}

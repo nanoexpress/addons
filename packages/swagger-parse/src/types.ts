@@ -31,5 +31,5 @@ interface ISwaggerSchema {
 
 export type SwaggerMain = Record<string, ISwaggerSchema>;
 export type SwaggerContainer = Record<string, Record<string, SwaggerMain>>;
-type AjvMain = Record<string, IAjvSchema | null>;
+export type AjvMain = Record<string, IAjvSchema | null>;
 export type AjvContainer = Record<string, Record<string, AjvMain>>;

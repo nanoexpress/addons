@@ -29,7 +29,7 @@ interface ISwaggerSchema {
 }
 export declare type SwaggerMain = Record<string, ISwaggerSchema>;
 export declare type SwaggerContainer = Record<string, Record<string, SwaggerMain>>;
-declare type AjvMain = Record<string, IAjvSchema | null>;
+export declare type AjvMain = Record<string, IAjvSchema | null>;
 export declare type AjvContainer = Record<string, Record<string, AjvMain>>;
 export {};
 //# sourceMappingURL=types.d.ts.map

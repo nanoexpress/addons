@@ -1,16 +1,25 @@
-import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { dependencies } from './package.json';
 
+const modules = ['swagger-parse'];
 const external = Object.keys(dependencies).concat([
   'events',
   'http',
   'zlib',
   'fs',
-  'fs/promises'
+  'fs/promises',
+  'path',
+  'child_process'
 ]);
+modules.forEach((moduleName) => {
+  const {
+    dependencies: moduleDepedencies
+  } = require(`./packages/${moduleName}/package.json`);
 
-export default ['swagger-parse'].map((name) => ({
+  external.push(...Object.keys(moduleDepedencies));
+});
+
+export default modules.map((name) => ({
   input: `./packages/${name}/src/${name}.ts`,
   output: [
     {
@@ -29,7 +38,6 @@ export default ['swagger-parse'].map((name) => ({
     }
   ],
   plugins: [
-    resolve(),
     typescript({
       tsconfigOverride: {
         include: [`packages/${name}/src`],
@@ -38,7 +46,7 @@ export default ['swagger-parse'].map((name) => ({
           declarationDir: `packages/${name}/typings`
         }
       },
-      rollupCommonJSResolveHack: false,
+      rollupCommonJSResolveHack: true,
       clean: true,
       useTsconfigDeclarationDir: true
     })
