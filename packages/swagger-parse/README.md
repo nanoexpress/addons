@@ -22,8 +22,8 @@ yarn add @nanoexpress/addon-swagger-parse
 
 ```js
 await swaggerParse(fs.readFileSync('docs.yml'));
-const { default: routeInterface } = await import('validations/xxxx.d.ts');
-const { default: routeAjvSchema } = await import('validations/xxxx.json');
+const dtsInterfaces = await import('dts-interface.d.ts');
+const dtsValidations = await import('dts-validations.json');
 
 /// auth/index.js
 app.get(
