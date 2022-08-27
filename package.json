@@ -46,7 +46,7 @@
     "prettier-config-airlight": "^1.0.1",
     "rollup": "^2.58.3",
     "rollup-plugin-typescript2": "^0.30.0",
-    "semantic-release": "^18.0.0",
+    "semantic-release": "^19.0.3",
     "semantic-release-monorepo": "^7.0.5",
     "smartlint": "^5.0.0",
     "typedoc": "^0.22.7",
