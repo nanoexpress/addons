@@ -1,8 +1,8 @@
-import typescript from 'rollup-plugin-typescript2';
-import { dependencies } from './package.json';
+const typescript = require('rollup-plugin-typescript2');
+const pkg = require('./package.json');
 
 const modules = ['swagger-parse'];
-const external = Object.keys(dependencies).concat([
+const external = Object.keys(pkg.dependencies).concat([
   'events',
   'http',
   'zlib',
@@ -19,7 +19,7 @@ modules.forEach((moduleName) => {
   external.push(...Object.keys(moduleDepedencies));
 });
 
-export default modules.map((name) => ({
+module.exports = modules.map((name) => ({
   input: `./packages/${name}/src/${name}.ts`,
   output: [
     {
@@ -46,7 +46,6 @@ export default modules.map((name) => ({
           declarationDir: `packages/${name}/typings`
         }
       },
-      rollupCommonJSResolveHack: true,
       clean: true,
       useTsconfigDeclarationDir: true
     })
