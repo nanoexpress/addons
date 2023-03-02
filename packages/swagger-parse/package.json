@@ -10,7 +10,7 @@
     "url": "https://www.patreon.com/dalisoft"
   },
   "engines": {
-    "node": ">=14.18.1"
+    "node": ">=18.12.1"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,12 @@
   },
   "homepage": "https://github.com/nanoexpress/addons/tree/master/packages/swagger-parse#readme",
   "dependencies": {
-    "@types/prettier": "^2.4.4",
-    "ajv": "^8.10.0",
+    "@types/prettier": "^2.7.2",
+    "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "js-yaml": "^4.1.0",
-    "json-schema-to-typescript": "^10.1.5",
-    "prettier": "^2.5.1",
-    "prettier-config-airlight": "^1.0.1"
+    "json-schema-to-typescript": "^12.0.0",
+    "prettier": "^2.8.4",
+    "prettier-config-airlight": "^2.0.0"
   }
 }
