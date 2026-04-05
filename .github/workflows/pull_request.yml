@@ -14,33 +14,28 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
-        os: [ubuntu-22.04]
+        bun-version: [latest]
+        os: [ubuntu-latest]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - name: Use Bun.js
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          bun-version: ${{ matrix.bun-version }}
 
       - name: Cache
-        uses: actions/cache@v3
+        uses: actions/cache@v5
         with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          path: "~/.bun/install/cache"
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
 
       - name: Install
-        run: yarn --frozen-lockfile
-
-      - name: Lerna configure
-        run: |
-          yarn lerna bootstrap
-          yarn lerna link
-
-      - name: Build
-        run: yarn build
+        run: bun install --frozen-lockfile
 
       - name: Lint code
-        run: yarn lint
+        run: bun run lint
+
+      - name: Build
+        run: bun run build
