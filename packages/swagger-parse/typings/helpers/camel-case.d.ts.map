@@ -1,1 +1,1 @@
-{"version":3,"file":"camel-case.d.ts","sourceRoot":"","sources":["../../src/helpers/camel-case.ts"],"names":[],"mappings":"yBAAgB,KAAK,MAAM,KAAG,MAAM;AAApC,wBAC4D"}
+{"version":3,"file":"camel-case.d.ts","sourceRoot":"","sources":["../../src/helpers/camel-case.ts"],"names":[],"mappings":";0BAAgB,GAAG,EAAE,MAAM,GAAG,MAAM"}
