@@ -11,10 +11,11 @@
   },
   "scripts": {
     "lint": "smartlint",
-    "build": "rollup -c",
+    "build": "bun build packages/swagger-parse/src/swagger-parse.ts --outdir packages/swagger-parse/esm --entry-naming \"[name].esm.js\" --format esm --target node --packages=external --sourcemap=linked && bun build packages/swagger-parse/src/swagger-parse.ts --outdir packages/swagger-parse/cjs --entry-naming \"[name].cjs.js\" --format cjs --target node --packages=external --sourcemap=linked && bun run typecheck",
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
     "prepare": "husky",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "bun run lint && bun run build",
+    "typecheck": "tsc --emitDeclarationOnly"
   },
   "dependencies": {},
   "devDependencies": {
