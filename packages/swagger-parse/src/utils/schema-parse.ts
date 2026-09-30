@@ -7,12 +7,12 @@ export default function swaggerSchemaParse(
   if (typeof input === 'string') {
     try {
       return JSON.parse(input) as SwaggerContainer;
-    } catch (_e) {
+    } catch (e) {
       //
     }
     try {
       return jsYaml.load(input) as SwaggerContainer;
-    } catch (_e) {
+    } catch (e) {
       throw new Error('The input is neither JSON or YAML');
     }
   } else if (typeof input === 'object') {
