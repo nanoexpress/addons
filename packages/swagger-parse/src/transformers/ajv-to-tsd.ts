@@ -42,7 +42,7 @@ export default async function ajvToTypeScriptDeclaration(
           continue;
         }
 
-        const cleanup = (): Promise<undefined[]> =>
+        const cleanup = (): Promise<void[]> =>
           Promise.all(
             [
               validationJsonFile,
