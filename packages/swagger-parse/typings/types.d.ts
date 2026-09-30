@@ -4,7 +4,7 @@ export interface IAjvSchema {
     properties: Record<string, IAjvSchema | IAjvSchema[]>;
     additionalProperties: boolean;
 }
-export declare type SwaggerParamType = 'headers' | 'queries' | 'cookies';
+export type SwaggerParamType = 'headers' | 'queries' | 'cookies';
 export interface ISchema {
     required?: boolean;
 }
@@ -27,9 +27,9 @@ interface ISwaggerSchema {
         }>;
     };
 }
-export declare type SwaggerMain = Record<string, ISwaggerSchema>;
-export declare type SwaggerContainer = Record<string, Record<string, SwaggerMain>>;
-export declare type AjvMain = Record<string, IAjvSchema | null>;
-export declare type AjvContainer = Record<string, Record<string, AjvMain>>;
+export type SwaggerMain = Record<string, ISwaggerSchema>;
+export type SwaggerContainer = Record<string, Record<string, SwaggerMain>>;
+export type AjvMain = Record<string, IAjvSchema | null>;
+export type AjvContainer = Record<string, Record<string, AjvMain>>;
 export {};
 //# sourceMappingURL=types.d.ts.map

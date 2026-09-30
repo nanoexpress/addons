@@ -81,14 +81,14 @@ export default async function ajvToTypeScriptDeclaration(
   await Promise.all([
     writeFile(
       interfaceFile,
-      prettier.format(declarations, {
+      await prettier.format(declarations, {
         ...prettierAirlightConfig,
         parser: 'typescript'
       })
     ),
     writeFile(
       validationFile,
-      prettier.format(JSON.stringify(validations), {
+      await prettier.format(JSON.stringify(validations), {
         ...prettierAirlightConfig,
         parser: 'json'
       })

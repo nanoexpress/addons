@@ -1,5 +1,5 @@
 {
-  "include": ["packages"],
+  "include": ["packages/swagger-parse/src"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es2020",
@@ -11,13 +11,15 @@
     // "jsx": "preserve",
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "typings",
+    "declarationDir": "packages/swagger-parse/typings",
     // "outFile": "./",
     "outDir": "cjs",
     // "rootDir": ".",
     "composite": false,
     "removeComments": true,
-    "noEmit": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "rootDir": "packages/swagger-parse/src",
     // "importHelpers": true,
     // "downlevelIteration": true,
     // "isolatedModules": true,
@@ -36,8 +38,9 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
 
-    "moduleResolution": "node",
-    "baseUrl": "src",
+    "types": ["node"],
+    "moduleResolution": "bundler",
+    
     // "paths": {},
     // "rootDirs": [],
     "typeRoots": ["./node_modules/@types", "types"],
