@@ -13,7 +13,7 @@ List of addons for nanoexpress
 - Has own examples
 - Cleaner structure
 - TypeScript/IDE Support
-- JSDoc Annonations
+- JSDoc Annotations
 
 ## List
 
