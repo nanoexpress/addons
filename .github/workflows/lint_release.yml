@@ -55,6 +55,9 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           ref: master
+          # keep node_modules from the Install step; default clean runs
+          # `git clean -ffdx`, which deletes it and breaks `bun run release-me`
+          clean: false
 
       - name: Release
         if: github.event_name == 'push'
