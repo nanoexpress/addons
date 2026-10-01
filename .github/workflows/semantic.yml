@@ -14,7 +14,10 @@ permissions:
   contents: read
 
 env:
-  COMMIT_REGEX: '^(feat|fix|perf|refactor|revert|docs|test|build|chore|style|ci)(\([a-zA-Z0-9./_-]+\))?(!)?: .+'
+  # scope charset includes `@` so full package names (e.g.
+  # `@nanoexpress/addon-swagger-parse`) are valid; release-me's workspace
+  # mode greps commit subjects for the full package name to scope releases
+  COMMIT_REGEX: '^(feat|fix|perf|refactor|revert|docs|test|build|chore|style|ci)(\([a-zA-Z0-9./_@-]+\))?(!)?: .+'
 
 jobs:
   semantic:

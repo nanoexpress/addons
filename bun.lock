@@ -20,7 +20,7 @@
     },
     "packages/swagger-parse": {
       "name": "@nanoexpress/addon-swagger-parse",
-      "version": "1.0.3",
+      "version": "3.0.0",
       "dependencies": {
         "@types/prettier": "^3.0.0",
         "ajv": "^8.18.0",
