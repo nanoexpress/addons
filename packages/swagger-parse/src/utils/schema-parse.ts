@@ -1,5 +1,5 @@
 import jsYaml from 'js-yaml';
-import { SwaggerContainer } from '../types';
+import type { SwaggerContainer } from '../types';
 
 export default function swaggerSchemaParse(
   input: Record<string, any> | string

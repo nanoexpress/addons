@@ -1,14 +1,14 @@
 /* eslint-disable max-lines-per-function */
-import { exec } from 'child_process';
-import { readFile, rm, writeFile } from 'fs/promises';
-import { resolve as pathResolve } from 'path';
+import { exec } from 'node:child_process';
+import { readFile, rm, writeFile } from 'node:fs/promises';
+import { resolve as pathResolve } from 'node:path';
 import prettier from 'prettier';
 import prettierAirlightConfig from 'prettier-config-airlight';
 import camelCase from '../helpers/camel-case';
 import getCurrentDir from '../helpers/get-cur-dir';
 import removeComments from '../helpers/remove-comments';
 import taskCatch from '../helpers/task-catch';
-import { AjvContainer, AjvMain } from '../types';
+import type { AjvContainer, AjvMain } from '../types';
 
 export default async function ajvToTypeScriptDeclaration(
   ajvSchema: AjvContainer | null
@@ -81,14 +81,14 @@ export default async function ajvToTypeScriptDeclaration(
   await Promise.all([
     writeFile(
       interfaceFile,
-      prettier.format(declarations, {
+      await prettier.format(declarations, {
         ...prettierAirlightConfig,
         parser: 'typescript'
       })
     ),
     writeFile(
       validationFile,
-      prettier.format(JSON.stringify(validations), {
+      await prettier.format(JSON.stringify(validations), {
         ...prettierAirlightConfig,
         parser: 'json'
       })
