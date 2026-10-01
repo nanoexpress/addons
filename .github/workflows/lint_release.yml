@@ -17,6 +17,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
+      pull-requests: write
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -70,3 +71,22 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: bun run release-me
+
+      - name: Open version bump PR
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          VERSION="${TAG##*-v}"
+          BRANCH="chore/bump-version-${VERSION}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          (cd packages/swagger-parse && npm version "$VERSION" --no-git-tag-version --allow-same-version)
+          git add packages/swagger-parse/package.json
+          git diff --cached --quiet && echo "version already in sync" && exit 0
+          git commit -m 'chore(addon-swagger-parse): update package.json version to v'"${VERSION}"
+          git push --force origin "$BRANCH"
+          gh pr create --title "chore(@nanoexpress/addon-swagger-parse): update package.json version to v${VERSION}" --body "Automated version bump following ${TAG}." || echo "PR already open"
+          gh pr merge --auto --squash "$BRANCH" || echo "auto-merge not enabled; merge the bump PR manually"

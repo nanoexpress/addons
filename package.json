@@ -16,7 +16,7 @@
     "prepublishOnly": "bun run lint && bun run build",
     "typecheck": "tsc --emitDeclarationOnly",
     "format": "biome check --write . && rumdl fmt .",
-    "release-me": "cd packages/swagger-parse && release-me -w --plugins=npm,npm-post,git,github-release"
+    "release-me": "cd packages/swagger-parse && release-me -w --plugins=npm,git,github-release"
   },
   "dependencies": {},
   "devDependencies": {
