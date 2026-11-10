@@ -10,7 +10,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "lint": "ls-lint && biome check . && oxlint . && rumdl check .",
+    "lint": "ls-lint && biome check . && rumdl check .",
     "build": "bun build packages/swagger-parse/src/swagger-parse.ts --outdir packages/swagger-parse/esm --entry-naming \"[name].esm.js\" --format esm --target node --packages=external --sourcemap=linked && bun build packages/swagger-parse/src/swagger-parse.ts --outdir packages/swagger-parse/cjs --entry-naming \"[name].cjs.js\" --format cjs --target node --packages=external --sourcemap=linked && bun run typecheck",
     "prepare": "lefthook install",
     "prepublishOnly": "bun run lint && bun run build",
@@ -20,13 +20,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@biomejs/biome": "^2.5.15",
+    "@biomejs/biome": "^2.6.6",
     "@commitlint/config-workspace-scopes": "^21.2.0",
     "@ls-lint/ls-lint": "^2.3.1",
     "@types/node": "^26.6.3",
     "conventional-changelog-conventionalcommits": "^9.3.1",
     "lefthook": "^2.1.15",
-    "oxlint": "^1.86.0",
     "release-me-sh": "^0.11.12",
     "rumdl": "^0.2.78",
     "typedoc": "^0.28.18",
