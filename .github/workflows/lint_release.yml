@@ -56,8 +56,6 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           ref: master
-          # use the PAT so branch pushes from later steps can trigger CI
-          token: ${{ secrets.GH_TOKEN }}
           # keep node_modules from the Install step; default clean runs
           # `git clean -ffdx`, which deletes it and breaks `bun run release-me`
           clean: false
@@ -78,19 +76,13 @@ jobs:
         if: github.event_name == 'push' && success()
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIT_USERNAME: ${{ vars.GIT_USERNAME }}
-          GIT_EMAIL: ${{ vars.GIT_EMAIL }}
         run: |
-          git fetch --tags --force --quiet
-          TAG=$(git describe --tags --abbrev=0 --match '@nanoexpress/addon-swagger-parse-v*' 2>/dev/null || true)
-          if [ -z "$TAG" ]; then
-            echo "No previous release tag found; skipping version bump PR."
-            exit 0
-          fi
+          TAG=$(git describe --tags --abbrev=0)
           VERSION="${TAG##*-v}"
           BRANCH="chore/bump-version-${VERSION}"
-          git config user.name "${GIT_USERNAME:-dalisoft}"
-          git config user.email "${GIT_EMAIL:-opensource@dalisoft.uz}"
+          # attribute the bump commit to the user who triggered the release
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR_ID}+${GITHUB_ACTOR}@users.noreply.github.com"
           git checkout -b "$BRANCH"
           VERSION="$VERSION" node -e "const f='packages/swagger-parse/package.json';const d=require('./'+f);d.version=process.env.VERSION;require('fs').writeFileSync(f,JSON.stringify(d,null,2)+'\n')"
           git add packages/swagger-parse/package.json
