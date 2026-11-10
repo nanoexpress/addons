@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        bun-version: [1.4.2]
+        bun-version: [1.4.4]
         os: [ubuntu-latest]
 
     steps:
@@ -73,7 +73,7 @@ jobs:
         run: bun run release-me
 
       - name: Open version bump PR
-        if: success()
+        if: github.event_name == 'push' && success()
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
