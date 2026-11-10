@@ -1,4 +1,4 @@
-import jsYaml from 'js-yaml';
+import { load } from 'js-yaml';
 import type { SwaggerContainer } from '../types';
 
 export default function swaggerSchemaParse(
@@ -11,7 +11,7 @@ export default function swaggerSchemaParse(
       //
     }
     try {
-      return jsYaml.load(input) as SwaggerContainer;
+      return load(input) as SwaggerContainer;
     } catch (e) {
       throw new Error('The input is neither JSON or YAML');
     }
